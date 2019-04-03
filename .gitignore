@@ -1,0 +1,91 @@
+# PROJECT SPECIFIC STUFF
+# ----------------------------------------------------------------------
+
+# sensitive configuration items that should not accidentally be
+# published to the repository
+/bash/.private
+
+### Using TypeScript?
+### Yes?  - Consider uncommenting the pattern below.
+### No?   - Consider deleting this section.
+# ----8<--------8<--------8<--------8<--------8<--------8<--------8<----
+# As this project uses TypeScript, JavaScript files are considered
+# output, not input.
+#
+# ATTENTION: If you do need the occasional .js file, you need to
+#            `git add` them separately.
+# *.js
+
+### Using Python?
+### Yes?  - Consider uncommenting the patterns below.
+### No?   - Consider deleting this section.
+# ----8<--------8<--------8<--------8<--------8<--------8<--------8<----
+# *.pyo
+# *.pyc
+
+
+# GENERAL STUFF
+# ----------------------------------------------------------------------
+
+# backup and temporary files
+*~
+*.bak
+*.swp
+
+# dependencies from JS package managers
+node_modules/
+bower_components/
+
+# IDE specific (Eclipse)
+.classpath
+.project
+.settings
+
+# IDE specific (Netbeans)
+nbproject
+
+# IDE specific (Visual Studio Code)
+.vscode
+
+
+# STUFF BELOW TAKEN FROM https://gist.github.com/octocat/9257657
+#
+# Thanks, github! :-)
+# ----------------------------------------------------------------------
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
