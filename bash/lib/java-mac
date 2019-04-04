@@ -1,0 +1,10 @@
+# version switching for java
+# inspired by https://stackoverflow.com/questions/52524112/how-do-i-install-java-on-mac-osx-allowing-version-switching
+use_java_version() {
+  # default to Java 12
+  local version=${1:-12}
+  export JAVA_HOME=$(/usr/libexec/java_home -v ${version})
+}
+
+# load default Java environment
+use_java_version

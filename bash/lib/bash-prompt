@@ -1,0 +1,32 @@
+# custom prompt
+#
+# Source of information https://ss64.com/bash/syntax-prompt.html
+#
+#
+# # Variables for customization
+# 
+# The bash prompt is customized by the use of environment variables.
+# The following variables are used by bash in different situations:
+#
+# - PS1: interactive prompt
+# - PS2: continuation prompt for multi-line commands (default `>`)
+# - PS3: used by `select` loop in a script
+# - PS4: used in debug mode of a script (enable with `set -x`, default `++`)
+# - PROMPT_COMMAND: if set, this command is executed and put in front of PS1
+#
+#
+# # Special character substitution
+#
+# bash will substitute some characters dynamically. Here's a list of
+# the ones I find most important, with a short explanation:
+#
+# - \e: Start escape sequence, e.g. for color codes
+# - \h: Hostname (not full qualified, i.e. foo for host foo.example.com)
+# - \H: FQDN (fully qualified host name, i.e. foo.example.com)
+# - \t: Time in 24h format HH:MM:SS
+# - \u: username of current user
+# - \w: full current working directory
+# - \W: base name of current working directory
+# - \$: Expands to `$` if your not root, or to `#` if you are root.
+
+export PS1='\[\e[0;30;1m\]\W\[\e[m\] $ '

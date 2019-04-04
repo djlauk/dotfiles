@@ -1,0 +1,14 @@
+# This file is just a usage example.
+# On your computer / for your user, create a copy of
+# this file named `.manifest`.
+
+# export any specific variables you might need only on this machine
+export SOMETHING_STRANGE='really strange'
+
+# load modules explicitly
+dotfiles_load_module bash-colors
+dotfiles_load_module bash-prompt
+dotfiles_load_module git
+dotfiles_load_module java-mac
+
+# as an alternative, you can create symlinks in `/.manifest.d/`

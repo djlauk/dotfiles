@@ -1,0 +1,3 @@
+# recognize / display colors in output of less
+# see https://superuser.com/questions/117841/get-colors-in-less-or-more
+export LESS='-R'

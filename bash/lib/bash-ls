@@ -1,0 +1,17 @@
+# according to `man bash` aliases have been superseded by functions,
+# so let's use functions instead of aliases.
+
+# make a `ll` command
+ll() {
+  # -l   list format output
+  # -G   color output
+  ls -l -G $@
+}
+
+# make a `la` command
+la() {
+  # -a   include hidden files and directories
+  # -l   list format output
+  # -G   color output
+  ls -a -l -G $@
+}

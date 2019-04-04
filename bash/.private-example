@@ -1,0 +1,12 @@
+# This file is just a usage example.
+# On your computer / for your user, create a copy of
+# this file named `.private`.
+
+# for non-critical items this is OK, I guess
+export MY_API_KEY='verySecretDoNotTellAnyone'
+
+# This is not encryption, but at least the value is
+# obfuscated and some effort is involved to decode it.
+# So, if this value would be visible for a moment
+# (e.g. during a live demo) you should still be OK.
+export MY_OTHER_SECRET=$(echo 'c2VjcmV0Cg==' | base64 -D)
