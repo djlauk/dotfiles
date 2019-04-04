@@ -1,27 +1,13 @@
 # PROJECT SPECIFIC STUFF
 # ----------------------------------------------------------------------
 
-# sensitive configuration items that should not accidentally be
-# published to the repository
+# sensitive configuration items
+# should not accidentally be published to the repository
 /bash/.private
 
-### Using TypeScript?
-### Yes?  - Consider uncommenting the pattern below.
-### No?   - Consider deleting this section.
-# ----8<--------8<--------8<--------8<--------8<--------8<--------8<----
-# As this project uses TypeScript, JavaScript files are considered
-# output, not input.
-#
-# ATTENTION: If you do need the occasional .js file, you need to
-#            `git add` them separately.
-# *.js
-
-### Using Python?
-### Yes?  - Consider uncommenting the patterns below.
-### No?   - Consider deleting this section.
-# ----8<--------8<--------8<--------8<--------8<--------8<--------8<----
-# *.pyo
-# *.pyc
+# configuration of this machine
+# should not be published to the repository
+/bash/.manifest
 
 
 # GENERAL STUFF
