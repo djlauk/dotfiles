@@ -1,0 +1,61 @@
+# helpers for working with dotfiles itself
+
+dotfiles () {
+    local command=$1
+    local f
+    local symlink
+
+    case $command in
+        -h|-help|--help|help)
+            cat <<HERE
+usage: dotfiles COMMAND
+
+Available commands:
+
+create-links        Create missing symlinks in .manifest.d/ to all modules.
+
+edit-manifest       Edit the .manifest file.
+                    Create it from the example, if it doesn't exist yet.
+
+reload-dotfiles     Reload the dotfiles module.
+
+reload-profile      Reload the .bash_profile.
+HERE
+            ;;
+
+        edit-manifest)
+            if [[ ! -r $DOTFILES_HOME/bash/.manifest ]]
+            then
+                echo -e "Creating \033[0;33m$DOTFILES_HOME/bash/.manifest\033[m from example file"
+                cp $DOTFILES_HOME/bash/.manifest{-example,}
+            fi
+            ${EDITOR:-vi} $DOTFILES_HOME/bash/.manifest
+            ;;
+
+        create-links)
+            [[ ! -d $DOTFILES_HOME/bash/.manifest.d/ ]] && mkdir $DOTFILES_HOME/bash/.manifest.d
+            pushd $DOTFILES_HOME/bash/.manifest.d >/dev/null
+            for f in ../lib/*
+            do
+                symlink=${f##*/}
+                [[ -L ${symlink} ]] && continue
+                echo -ne "Creating link for module \033[0;36m${symlink}\033[m ... "
+                ln -s $f && echo -e "\033[0;32mOK\033[m" || echo -e "\033[0;31mFAIL\033[m"
+            done
+            popd >/dev/null
+            ;;
+
+        reload-dotfiles)
+            source $DOTFILES_HOME/bash/lib/dotfiles
+            ;;
+
+        reload-profile)
+            source ~/.bash_profile
+            ;;
+
+        *)
+            echo "dotfiles: Unknown command. Try: dotfiles help">&2
+            return 1
+            ;;
+    esac
+}
