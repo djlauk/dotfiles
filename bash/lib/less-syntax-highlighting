@@ -1,0 +1,9 @@
+# enable syntax highlighting in less
+# see https://gist.github.com/textarcana/4611277
+
+HILITE_LESSPIPE=$(which src-hilite-lesspipe.sh)
+if [[ -z $HILITE_LESSPIPE ]]; then
+  echo "Could not find src-hilite-lesspipe.sh"
+else
+  export LESSOPEN="| $HILITE_LESSPIPE %s"
+fi
